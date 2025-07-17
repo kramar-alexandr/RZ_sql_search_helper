@@ -3,6 +3,8 @@ import { db } from './db.js';
 // Процедура-обработчик для POST /finditem
 export async function findItemHandler(req, res) {
   const { names } = req.body;
+  console.log('Received names:', names);
+  
   
   if (!Array.isArray(names) || names.length === 0) {
     return res.status(400).json({ error: 'names (array) field is required' });
